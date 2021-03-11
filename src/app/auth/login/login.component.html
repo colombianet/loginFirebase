@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col text-center">
+
+        <form class="form-signin" (ngSubmit)="signIn()" [formGroup]="loginForm">
+
+            <img class="mb-4" src="assets/img/login.jpg" alt="logo" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Iniciar sesion</h1>
+            <label for="inputEmail" class="sr-only">Email</label>
+            <input formControlName="email" type="email" id="inputEmail" class="form-control" placeholder="Correo" autofocus>
+            <div *ngIf="validField('email')" class="text-danger text-left mb-1">
+                Debes ingresar un correo valido.
+            </div>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Password">
+            <div *ngIf="validField('password')" class="text-danger text-left mb-1">
+                Al menos 6 caracteres.
+            </div>
+            <div class="checkbox mt-1 mb-3 row">
+                <div class="col">
+                    <label>
+                        <input formControlName="remember" type="checkbox" class="text-left"> Recordarme
+                    </label>
+                </div>
+                <div class="col pointer">
+                    <a routerLink="/register" class="text-right">Ir a registro</a>
+                </div>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+            <p class="mt-5 mb-3 text-muted">&copy; {{ year }}</p>
+        </form>
+
+    </div>
+</div>
